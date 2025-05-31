@@ -3,21 +3,20 @@ package petadoptionapp;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.net.URI;
 
 public class ContactDialog extends JDialog {
 
     public ContactDialog(Frame owner, String contactNumber, String contactEmail) {
-        super(owner, "Contact Us", true); // true makes it modal (blocks owner until closed)
+        super(owner, "Contact Us", true);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
-        setUndecorated(true); // Remove default window decorations for custom look
+        setUndecorated(true);
 
-        // Set a fixed size for the dialog to match the app's phone-like aesthetic
-        setSize(320, 250); // Adjusted size for contact dialog
+        setSize(320, 250);
 
-        // Main panel for the dialog content with rounded corners
         JPanel mainPanel = new JPanel(new BorderLayout()) {
             @Override
             protected void paintComponent(Graphics g) {
@@ -25,69 +24,77 @@ public class ContactDialog extends JDialog {
                 Graphics2D g2 = (Graphics2D) g;
                 g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-                int arc = 20; // Radius for rounded corners
+                int arc = 20;
                 int x = 0;
                 int y = 0;
                 int width = getWidth();
                 int height = getHeight();
 
-                // Fill background
-                g2.setColor(Color.decode("#efefda")); // Your app's background color
+                g2.setColor(Color.decode("#efefda"));
                 g2.fillRoundRect(x, y, width, height, arc, arc);
 
-                // Draw border
-                g2.setColor(Color.BLACK); // Border color
-                g2.setStroke(new BasicStroke(1)); // Border thickness
+                g2.setColor(Color.BLACK);
+                g2.setStroke(new BasicStroke(1));
                 g2.drawRoundRect(x, y, width - 1, height - 1, arc, arc);
             }
         };
-        mainPanel.setOpaque(false); // Make sure it's transparent for custom painting
-        mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20)); // Padding inside the dialog
+        mainPanel.setOpaque(false);
+        mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // Title Label
         JLabel titleLabel = new JLabel("Get in Touch!");
         titleLabel.setFont(new Font("Arial Narrow", Font.BOLD, 24));
-        titleLabel.setForeground(new Color(0, 0, 128)); // Navy Blue
+        titleLabel.setForeground(new Color(0, 0, 128));
         titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
         mainPanel.add(titleLabel, BorderLayout.NORTH);
 
-        // Contact details panel
         JPanel detailsPanel = new JPanel();
-        detailsPanel.setOpaque(false); // Make it transparent to show mainPanel's background
+        detailsPanel.setOpaque(false);
         detailsPanel.setLayout(new BoxLayout(detailsPanel, BoxLayout.Y_AXIS));
-        detailsPanel.setBorder(new EmptyBorder(15, 0, 15, 0)); // Vertical padding
+        detailsPanel.setBorder(new EmptyBorder(15, 0, 15, 0));
 
         JLabel numberLabel = new JLabel("<html><b>Phone:</b> " + contactNumber + "</html>");
         numberLabel.setFont(new Font("Arial Narrow", Font.PLAIN, 18));
         numberLabel.setForeground(Color.BLACK);
         numberLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        JLabel emailLabel = new JLabel("<html><b>Email:</b> " + contactEmail + "</html>");
+        // Make the email label clickable
+        JLabel emailLabel = new JLabel("<html><b>Email: <b>" + contactEmail + "</a></html><a href=''>");
         emailLabel.setFont(new Font("Arial Narrow", Font.PLAIN, 18));
-        emailLabel.setForeground(Color.BLACK);
+        emailLabel.setForeground(Color.BLUE);
+        emailLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
         emailLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        emailLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    Desktop.getDesktop().mail(new URI("mailto:" + contactEmail));
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(ContactDialog.this, "Unable to open email client.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+
         detailsPanel.add(numberLabel);
-        detailsPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Space between labels
+        detailsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
         detailsPanel.add(emailLabel);
 
         mainPanel.add(detailsPanel, BorderLayout.CENTER);
 
-        // Close button
         JButton closeButton = new JButton("Close");
         closeButton.setFont(new Font("Arial Narrow", Font.BOLD, 16));
-        closeButton.setBackground(new Color(0, 0, 128)); // Navy Blue background
-        closeButton.setForeground(Color.WHITE); // White text
-        closeButton.setFocusPainted(false); // Remove focus border
+        closeButton.setBackground(new Color(0, 0, 128));
+        closeButton.setForeground(Color.WHITE);
+        closeButton.setFocusPainted(false);
         closeButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        closeButton.addActionListener(e -> dispose()); // Close the dialog when clicked
+        closeButton.addActionListener(e -> dispose());
 
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         buttonPanel.setOpaque(false);
         buttonPanel.add(closeButton);
         mainPanel.add(buttonPanel, BorderLayout.SOUTH);
 
-        setContentPane(mainPanel); // Set the custom panel as the dialog's content
-        setLocationRelativeTo(owner); // Center relative to the owner frame
+        setContentPane(mainPanel);
+        setLocationRelativeTo(owner);
     }
 }
