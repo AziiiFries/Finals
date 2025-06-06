@@ -97,211 +97,253 @@ public class AllPetsPanel extends JPanel {
         add(scrollPane, BorderLayout.CENTER);
 
         // Initialize the full list of pets (keeping content as is)
-         fullPetList = new ArrayList<>(Arrays.asList(
-        		// ---- Male Cats ---
-           new Cat("Ash", 2, 0, 
-                	"Health Status:" +
-                	"Spayed/Neuterd:" +
-                	"Vaccinations: " +
-                	"Description: ", 
-                	"/resources/cat_ash.png", "Male"),
-           new Cat("Choknat", 1, 0,
-                    "Health Status:" +
-                    "Spayed/Neuterd:" +
-                    "Vaccinations: " +
-                    "Description:, ",
-                    "/resources/cat_choknat.png", "Male"),
-           new Cat("Frank", 2, 0, 
-                    "Health Status:" +
-                    "Spayed/Neuterd:" +
-                    "Vaccinations: " +
-                    "Description: ", 
-                    "/resources/cat_frank.png", "Male"),
-           new Cat("Jobet", 1, 0, 
-                	"Health Status:" +
-                    "Spayed/Neuterd:" +
-                    "Vaccinations: " +
-                    "Description:",
-                    "/resources/cat_jobet.png", "Male"),
-           new Cat("Pipoy", 5, 0, 
-                	"Health Status:" +
-                    "Spayed/Neuterd:" +
-                    "Vaccinations: " +
-                    "Description:",
-                    "/resources/cat_pipoy.png", "Male"),
-           new Cat("Riley", 3, 0, 
-            		"Health Status:" +
-                    "Spayed/Neuterd:" +
-                    "Vaccinations: " +
-                    "Description:",
-                    "/resources/cat_riley.png", "Male"),
-           new Cat("Toffee", 3, 0, 
-           		    "Health Status:" +
-                    "Spayed/Neuterd:" +
-                    "Vaccinations: " +
-                    "Description:",
-                    "/resources/cat_toffee.png", "Male"),
-           
-            	// ---- Female Cats ----
-            new Cat("Kittys", 2, 0, 
-            		"Health Status:" +
-            		"Spayed/Neuterd:" +
-            		"Vaccinations: " +
-            		"Description: ", 
-            		"/resources/cat_kitty.png", "Female"),
-            new Cat("Mimay", 1, 0,
-            		"Health Status:" +
-                    "Spayed/Neuterd:" +
-                    "Vaccinations: " +
-                    "Description:, ",
-                    "/resources/cat_mimay.png", "Female"),
-            new Cat("Mimi", 2, 0, 
-            		"Health Status:" +
-                    "Spayed/Neuterd:" +
-                    "Vaccinations: " +
-                    "Description: ", 
-                    "/resources/cat_mimi.png", "Female"),
-            new Cat("Nene", 1, 0, 
-            		"Health Status:" +
-                    "Spayed/Neuterd:" +
-                    "Vaccinations: " +
-                    "Description:",
-                    "/resources/cat_nene.png", "Female"),
-            new Cat("Osang", 5, 0, 
-            		"Health Status:" +
-                    "Spayed/Neuterd:" +
-                    "Vaccinations: " +
-                    "Description:",
-                    "/resources/cat_osang.png", "Female"),
-            new Cat("Sassa", 3, 0, 
-            		"Health Status:" +
-                    "Spayed/Neuterd:" +
-                    "Vaccinations: " +
-                    "Description:",
-                    "/resources/cat_sassa.png", "Female"),
-            new Cat("Siopao", 3, 0, 
-            		"Health Status:" +
-                    "Spayed/Neuterd:" +
-                    "Vaccinations: " +
-                    "Description:",
-                    "/resources/cat_siopao.png", "Female"),
-            new Cat("Tisay", 3, 0, 
-            		"Health Status:" +
-                    "Spayed/Neuterd:" +
-                    "Vaccinations: " +
-                    "Description:",
-                    "/resources/cat_tisay.png", "Female"),
+        fullPetList = new ArrayList<>(Arrays.asList(
+            // Male Cats    
+   new Cat("Ash", 2, 0, // 2 years old
+                       "Color: Blue, Breed: British Shorthair\n" +
+                       "Health Status: Asthma\n" +
+                       "Spayed/Neutered: Neutered\n" +
+                       "Vaccinations & Deworm: Deworm, 4-in-1, Anti-rabies\n" +
+                       "Description: Ash was adopted from a shelter by a caring family who continues to manage his asthma with love and attention.",
+                       "/resources/cat_ash.jpg", "Male"),
 
-            	// --- Male Dog Rescues ---
-            new Dog("Alexis", 2, 0,
-                    "Color: Brown, Breed: Aspin\n" +
-                    "Health Status: One eye surgically removed due to a past injury. Currently under medication maintenance but stable and responding well.\n" +
-                    "Spayed/Neutered: Neutered\n" +
-                    "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
-                    "Description: Alexis was found in a vacant lot in Marikina City, alone and injured. Despite her early hardships, he remains incredibly gentle and affectionate.",
-                    "/resources/dog_alexis.png", "Male"),
-            new Dog("Arian", 1, 2, 
-                    "Color: Brown and White, Breed: Basenji\n" +
-                    "Health Status: Allergic to Royal Canin dry dog food\n" +
-                    "Spayed/Neutered: Neutered\n" +
-                    "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
-                    "Description: He was rescued as a malnourished stray pup searching for food and shelter. With love and care, he’s now healthy, happy, and ready for his forever home.",
-                    "/resources/dog_arian.png", "Male"),
-            new Dog("Billie", 1, 0,
-                    "Color: Black and White, Breed: Border Collie\n" +
-                    "Health Status: Left eye has cataract\n" +
-                    "Spayed/Neutered: Not yet\n" +
-                    "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
-                    "Description: Billie was rescued from neglect but has blossomed into a lively, intelligent dog. Despite having a cataract in one eye, he’s full of energy and love.",
-                    "/resources/dog_billie.png", "Male"),
-            new Dog("Brisket", 0, 10, 
-                    "Color: Off white and Gray, Breed: Maltese\n" +
-                    "Health Status: No health issues\n" +
-                    "Spayed/Neutered: Not yet\n" +
-                    "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
-                    "Description: Brisket was rescued after being abandoned in a box near a busy road, scared and hungry. Now safe and healthy, he’s a cheerful pup ready for a loving home.",
-                    "/resources/dog_brisket.png", "Male"),
-            new Dog("Brix", 0, 11, 
-                    "Color: White, Breed: Shih Tzu\n" +
-                    "Health Status: Underbite and has injury in left foot (still recovering)\n" +
-                    "Spayed/Neutered: Not yet\n" +
-                    "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
-                    "Description: Brix was found limping near a roadside, likely abandoned, and was gently rescued by a kind passerby. He is now safe and recovering well from his foot injury.",
-                    "/resources/dog_brix.png", "Male"),
-            new Dog("Bruno", 3, 0,
-                    "Color: Brown and Black, Breed: Belgian Malinois\n" +
-                    "Health Status: No health issues\n" +
-                    "Spayed/Neutered: Neutered\n" +
-                    "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
-                    "Description: Bruno was rescued after being spotted wandering alone near a construction site, hungry and scared. He was safely brought in and has since regained his strength and confidence.",
-                    "/resources/dog_bruno.png", "Male"),
-            new Dog("Brutos", 1, 0,
-                    "Color: Brown and White, Breed: Aspin\n" +
-                    "Health Status: No health issues\n" +
-                    "Spayed/Neutered: Neutered\n" +
-                    "Vaccinations & Deworm: Not specified\n" +
-                    "Description: Brutos was rescued from the streets after being seen scavenging for food near a marketplace. He quickly adapted to care and is now thriving in a safe environment.",
-                    "/resources/dog_brutos.png", "Male"),
-            new Dog("Frankie", 0, 7, 
-                    "Color: Multi-colored, Breed: Chihuahua\n" +
-                    "Health Status: Has epilepsy\n" +
-                    "Spayed/Neutered: Not yet\n" +
-                    "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
-                    "Description: Frankie was rescued after being abandoned outside a veterinary clinic, trembling and alone. Despite his epilepsy, he is now receiving the care he needs and continues to show a loving spirit.",
-                    "/resources/dog_frankie.png", "Male"),
+   new Cat("Choknat", 1, 0, // 1 year old
+                       "Color: Black gray, Breed: Philippine Street Cat\n" +
+                       "Health Status: Allergic to wet food\n" +
+                       "Spayed/Neutered: Not yet\n" +
+                       "Vaccinations & Deworm: Deworm, 4-in-1\n" +
+                       "Description: Choknat was found wandering in a local neighborhood and was adopted by a compassionate rescuer who gave her a safe home.",
+                       "/resources/cat_choknat.jpg", "Female"),
 
-            	// --- Female Dog Rescues ---
-            new Dog("Alusha", 2, 0,
-                    "Color: Light Brown, Breed: Golden Retriever\n" +
-                    "Health Status: No health issues\n" +
-                    "Spayed/Neutered: Spayed\n" +
-                    "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
-                    "Description: Alusha was rescued from a backyard breeder who could no longer care for her and her littermates. She was the smallest of the group but full of energy and love.",
-                    "/resources/dog_alusha.png", "Female"),
-            new Dog("Andy", 0, 5, // 5 months old
-                    "Color: Black, Breed: Dachshund\n" +
-                    "Health Status: No health issues\n" +
-                    "Spayed/Neutered: Not yet\n" +
-                    "Vaccinations & Deworm: 8-in-1 & Oral Deworm\n" +
-                    "Description: Andy was found wandering alone near a marketplace, likely abandoned due to his breed's health maintenance needs. A kind passerby alerted rescuers just in time.",
-                    "/resources/dog_andy.png", "Female"),
-            new Dog("Biscoff", 0, 2, // 2 months old
-                    "Color: Brown and White, Breed: Corgi\n" +
-                    "Health Status: No health issues\n" +
-                    "Spayed/Neutered: Not yet\n" +
-                    "Vaccinations & Deworm: (1) 8-in-1 & Oral Deworm\n" +
-                    "Description: Biscoff was discovered inside a cardboard box left outside a veterinary clinic. Despite his young age, he showed remarkable resilience and playfulness.",
-                    "/resources/dog_biscoff.png", "Female"),
-            new Dog("Bleu", 0, 3, // 3 months old
-                    "Color: Black Brown, Breed: Rottweiler\n" +
-                    "Health Status: Has allergy to Nutri chunks dry dog food\n" +
-                    "Spayed/Neutered: Not yet\n" +
-                    "Vaccinations & Deworm: 8-in-1 & Oral Deworm\n" +
-                    "Description: Bleu was surrendered by a family who could not manage his dietary needs. He was malnourished and itchy but is now recovering in foster care.",
-                    "/resources/dog_bleu.png", "Female"),
-            new Dog("Cassie", 0, 5, // 5 months
-                    "Color: Black, Breed: Labrador\n" +
-                    "Health Status: Allergic to Aozi dry and wet dog food\n" +
-                    "Spayed/Neutered: Not yet\n" +
-                    "Vaccinations & Deworm: 8-in-1 & Oral Deworm\n" +
-                    "Description: Cassie was rescued from a cramped cage at an overrun shelter. She had been overlooked due to her allergies and black fur, but she’s now thriving.",
-                    "/resources/dog_cassie.png", "Female"),
-            new Dog("Chichay", 1, 0,
-                    "Color: Chocolate Brown, Breed: Labrador\n" +
-                    "Health Status: Deaf due to abusement\n" +
-                    "Spayed/Neutered: Spayed\n" +
-                    "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
-                    "Description: Chichay was found chained and abused in a backyard; her deafness is a lasting result of the trauma she endured. She has since blossomed into a gentle and loyal companion.",
-                    "/resources/dog_chichay.png", "Female"),
-            new Dog("Lucy", 0, 8, // 8 months old
-                    "Color: Black and white, Breed: Shih Tzu\n" +
-                    "Health Status: Deaf\n" +
-                    "Spayed/Neutered: Not yet\n" +
-                    "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
-                    "Description: Lucy was surrendered to the shelter after her breeder deemed her \"unsellable\" due to her deafness. She has proven to be a sweet and loving pup.",
-                    "/resources/dog_lucy.png", "Female")
+   new Cat("Frank", 2, 0, // 2 years old
+                       "Color: Black and Gray, Breed: Philippine Street Cat and Persian\n" +
+                       "Health Status: No health status\n" +
+                       "Spayed/Neutered: Neutered\n" +
+                       "Vaccinations & Deworm: Deworm, 4-in-1, Anti-rabies\n" +
+                       "Description: Frank was born to a stray mother and was adopted by a family who embraced his unique Persian mix and playful personality.",
+                       "/resources/cat_frank.jpg", "Male"),
+
+   new Cat("Jobet", 1, 0, // 1 year old
+                       "Color: Ginger white, Breed: Philippine Street Cat\n" +
+                       "Health Status: No health issues\n" +
+                       "Spayed/Neutered: Not yet\n" +
+                       "Vaccinations & Deworm: Deworm, 4-in-1, Anti-rabies\n" +
+                       "Description: Jobet was rescued from the streets as a kitten and welcomed into a warm and loving household.",
+                       "/resources/cat_jobet.jpg", "Male"),
+
+   new Cat("Kitty", 0, 2, // 2 months old
+                       "Color: Orange, Breed: Philippine Street Cat\n" +
+                       "Health Status: No health issues\n" +
+                       "Spayed/Neutered: Not yet\n" +
+                       "Vaccinations & Deworm: Deworm, 4-in-1, Anti-rabies\n" +
+                       "Description: Kitty was rescued as a stray kitten and taken in by a kind-hearted animal lover who gave her a safe and loving home.",
+                       "/resources/cat_kitty.jpg", "Female"),
+
+   new Cat("Pipoy", 0, 2, // 2 months old
+                       "Color: Ginger, Breed: Persian\n" +
+                       "Health Status: No health issues\n" +
+                       "Spayed/Neutered: Not yet\n" +
+                       "Vaccinations & Deworm: Deworm, 4-in-1\n" +
+                       "Description: Pipoy was adopted from a friend’s accidental litter and quickly became the adored baby of his new family.",
+                       "/resources/cat_pipoy.jpg", "Male"),
+
+   new Cat("Toffee", 0, 3, // 3 months old
+                       "Color: Black and gray, Breed: Philippine Street Cat\n" +
+                       "Health Status: No health issues\n" +
+                       "Spayed/Neutered: Not yet\n" +
+                       "Vaccinations & Deworm: Deworm, 4-in-1\n" +
+                       "Description: Toffee was taken in by a kind-hearted individual after being found alone near a market as a tiny kitten.",
+                       "/resources/cat_toffee.jpg", "Female"),
+
+   new Cat("Riley", 2, 0, // 2 years old
+                       "Color: Black and White, Breed: Persian\n" +
+                       "Health Status: Paralyzed lower feet due to abuse\n" +
+                       "Spayed/Neutered: Neutered\n" +
+                       "Vaccinations & Deworm: Deworm, 4-in-1, Anti-rabies\n" +
+                       "Description: Riley was rescued from an abusive situation that left him paralyzed, and he was adopted by a devoted caregiver who provides him with constant love and support.",
+                       "/resources/cat_riley.jpg", "Male"),
+// --- Female Cat Rescues ---
+   
+   new Cat("Osang", 0, 3, // 3 months old
+           "Color: Ginger, Breed: Persian Ragdoll\n" +
+           "Health Status: No health issues\n" +
+           "Spayed/Neutered: Not yet\n" +
+           "Vaccinations & Deworm: Deworm\n" +
+           "Description: Osang was adopted from a neighbor whose cat unexpectedly gave birth, and she quickly became the youngest member of her new family.",
+           "/resources/cat_osang.jpg", "Female"),
+
+new Cat("Mimay", 2, 0, // 2 years old
+           "Color: Ginger white, Breed: Philippine Street Cat\n" +
+           "Health Status: No right eye due to accident\n" +
+           "Spayed/Neutered: Spayed\n" +
+           "Vaccinations & Deworm: Deworm, 4-in-1, Anti-rabies\n" +
+           "Description: Mimay was found injured on the streets and lovingly adopted after surviving an accident that took her right eye.",
+           "/resources/cat_mimay.jpg", "Female"),
+
+new Cat("Mimi", 2, 0, // 2 years old
+           "Color: Black Gray and White, Breed: Philippine Street Cat\n" +
+           "Health Status: Allergic to any Monello cat food\n" +
+           "Spayed/Neutered: Spayed\n" +
+           "Vaccinations & Deworm: Deworm, 4-in-1, Anti-rabies\n" +
+           "Description: Mimi was rescued from the streets as a young stray and adopted into a caring home that helped her recover and thrive.",
+           "/resources/cat_mimi.jpg", "Female"),
+
+new Cat("Nene", 0, 11, // 11 months old
+           "Color: Blue, Breed: British Shorthair\n" +
+           "Health Status: No health issues\n" +
+           "Spayed/Neutered: Spayed\n" +
+           "Vaccinations & Deworm: Deworm, 4-in-1, Anti-rabies\n" +
+           "Description: Nene was adopted from a trusted breeder and has grown up in a comfortable and affectionate environment.",
+           "/resources/cat_nene.jpg", "Female"),
+
+new Cat("Tisay", 0, 4, // 4 months old
+           "Color: Ginger white, Breed: Philippine Street Cat\n" +
+           "Health Status: Difficulty to walk due to abuse\n" +
+           "Spayed/Neutered: Not yet\n" +
+           "Vaccinations & Deworm: Deworm, 4-in-1\n" +
+           "Description: Tisay was saved from an abusive situation and adopted by a compassionate rescuer who is helping her heal and learn to trust again.",
+           "/resources/cat_tisay.jpg", "Female"),
+
+new Cat("Sassa", 4, 0, // 4 years old
+           "Color: Black, Breed: Philippine Street Cat\n" +
+           "Health Status: Difficulty to jump due to old age\n" +
+           "Spayed/Neutered: Spayed\n" +
+           "Vaccinations & Deworm: Deworm, 4-in-1, Anti-rabies\n" +
+           "Description: Sassa was adopted as a senior stray and now enjoys a peaceful, loving home where she can age gracefully.",
+           "/resources/cat_sassa.jpg", "Female"),
+
+new Cat("Siopao", 3, 0, // 3 years old
+           "Color: Multi-colored, Breed: Philippine Street Cat\n" +
+           "Health Status: No right eye, surgically removed\n" +
+           "Spayed/Neutered: Spayed\n" +
+           "Vaccinations & Deworm: Deworm, 4-in-1, Anti-rabies\n" +
+           "Description: Siopao was rescued after an accident left her blind in one eye, and she was adopted into a nurturing home that continues to care for her special needs.","/resources/cat_siopao.jpg", "Female"),
+
+            // --- Male Dog Rescues ---
+new Dog("Alexis", 2, 0, // 2 years old
+        "Color: Brown, Breed: Aspin\n" +
+        "Health Status: One eye surgically removed due to a past injury. Currently under medication maintenance but stable and responding well.\n" +
+        "Spayed/Neutered: Neutered\n" +
+        "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
+        "Description: Alexis was found in a vacant lot in Marikina City, alone and injured. Despite her early hardships, he remains incredibly gentle and affectionate.",
+        "/resources/dog_alexis.jpg", "Male"),
+
+new Dog("Arian", 1, 2, // 1 year & 2 months old
+        "Color: Brown and White, Breed: Basenji\n" +
+        "Health Status: Allergic to Royal Canin dry dog food\n" +
+        "Spayed/Neutered: Neutered\n" +
+        "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
+        "Description: He was rescued as a malnourished stray pup searching for food and shelter. With love and care, he’s now healthy, happy, and ready for his forever home.",
+        "/resources/dog_arian.jpg", "Male"),
+
+new Dog("Pipoy", 1, 0, // 1 year old
+        "Color: Black and White, Breed: Border Collie\n" +
+        "Health Status: Left eye has cataract\n" +
+        "Spayed/Neutered: Not yet\n" +
+        "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
+        "Description: Billie was rescued from neglect but has blossomed into a lively, intelligent dog. Despite having a cataract in one eye, he’s full of energy and love.",
+        "/resources/dog_pipoy.jpg", "Male"),
+
+new Dog("Brisket", 0, 10, // 10 months old
+        "Color: Off white and Gray, Breed: Maltese\n" +
+        "Health Status: No health issues\n" +
+        "Spayed/Neutered: Not yet\n" +
+        "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
+        "Description: Brisket was rescued after being abandoned in a box near a busy road, scared and hungry. Now safe and healthy, he’s a cheerful pup ready for a loving home.",
+        "/resources/dog_brisket.jpg", "Male"),
+
+new Dog("Brix", 0, 11, // 11 months old
+        "Color: White, Breed: Shih Tzu\n" +
+        "Health Status: Underbite and has injury in left foot (still recovering)\n" +
+        "Spayed/Neutered: Not yet\n" +
+        "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
+        "Description: Brix was found limping near a roadside, likely abandoned, and was gently rescued by a kind passerby. He is now safe and recovering well from his foot injury.",
+        "/resources/dog_brix.jpg", "Male"),
+
+new Dog("Bruno", 3, 0, // 3 years old
+        "Color: Brown and Black, Breed: Belgian Malinois\n" +
+        "Health Status: No health issues\n" +
+        "Spayed/Neutered: Neutered\n" +
+        "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
+        "Description: Bruno was rescued after being spotted wandering alone near a construction site, hungry and scared. He was safely brought in and has since regained his strength and confidence.",
+        "/resources/dog_bruno.jpg", "Male"),
+
+new Dog("Brutos", 1, 0, // 1 year old
+        "Color: Brown and White, Breed: Aspin\n" +
+        "Health Status: No health issues\n" +
+        "Spayed/Neutered: Neutered\n" +
+        "Vaccinations & Deworm: \n" + // No vaccinations listed in the original text
+        "Description: Brutos was rescued from the streets after being seen scavenging for food near a marketplace. He quickly adapted to care and is now thriving in a safe environment.",
+        "/resources/dog_brutos.jpg", "Male"),
+
+new Dog("Frankie", 0, 7, // 7 months old
+        "Color: Multi-colored, Breed: Chihuahua\n" +
+        "Health Status: Has epilepsy\n" +
+        "Spayed/Neutered: Not yet\n" +
+        "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
+        "Description: Frankie was rescued after being abandoned outside a veterinary clinic, trembling and alone. Despite his epilepsy, he is now receiving the care he needs and continues to show a loving spirit.",
+        "/resources/dog_frankie.jpg", "Male"),
+
+            // --- Female Dog Rescues ---
+new Dog("Alusha", 2, 0, // 2 years old
+        "Color: Light Brown, Breed: Golden Retriever\n" +
+        "Health Status: No health issues\n" +
+        "Spayed/Neutered: Spayed\n" +
+        "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
+        "Description: Alusha was rescued from a backyard breeder who could no longer care for her and her littermates. She was the smallest of the group but full of energy and love.",
+        "/resources/dog_alusha.jpg", "Female"),
+
+new Dog("Andy", 0, 5, // 5 months old
+        "Color: Black, Breed: Dachshund\n" +
+        "Health Status: No health issues\n" +
+        "Spayed/Neutered: Not yet\n" +
+        "Vaccinations & Deworm: 8-in-1 & Oral Deworm\n" +
+        "Description: Andy was found wandering alone near a marketplace, likely abandoned due to his breed's health maintenance needs. A kind passerby alerted rescuers just in time.",
+        "/resources/dog_andy.jpg", "Female"),
+
+new Dog("Biscoff", 0, 2, // 2 months old
+        "Color: Brown and White, Breed: Corgi\n" +
+        "Health Status: No health issues\n" +
+        "Spayed/Neutered: Not yet\n" +
+        "Vaccinations & Deworm: 8-in-1 & Oral Deworm\n" +
+        "Description: Biscoff was discovered inside a cardboard box left outside a veterinary clinic. Despite his young age, he showed remarkable resilience and playfulness.",
+        "/resources/dog_biscoff.jpg", "Female"),
+
+new Dog("Bleu", 0, 3, // 3 months old
+        "Color: Black Brown, Breed: Rottweiler\n" +
+        "Health Status: Has allergy to Nutri chunks dry dog food\n" +
+        "Spayed/Neutered: Not yet\n" +
+        "Vaccinations & Deworm: 8-in-1 & Oral Deworm\n" +
+        "Description: Bleu was surrendered by a family who could not manage his dietary needs. He was malnourished and itchy but is now recovering in foster care.",
+        "/resources/dog_bleu.jpg", "Female"),
+
+new Dog("Cassie", 0, 5, // 5 months old
+        "Color: Black, Breed: Labrador\n" +
+        "Health Status: Allergic to Aozi dry and wet dog food\n" +
+        "Spayed/Neutered: Not yet\n" +
+        "Vaccinations & Deworm: 8-in-1 & Oral Deworm\n" +
+        "Description: Cassie was rescued from a cramped cage at an overrun shelter. She had been overlooked due to her allergies and black fur, but she’s now thriving.",
+        "/resources/dog_cassie.jpg", "Female"),
+
+new Dog("Chichay", 1, 0, // 1 year old
+        "Color: Chocolate Brown, Breed: Labrador\n" +
+        "Health Status: Deaf due to abusement\n" +
+        "Spayed/Neutered: Spayed\n" +
+        "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
+        "Description: Chichay was found chained and abused in a backyard; her deafness is a lasting result of the trauma she endured. She has since blossomed into a gentle and loyal companion.",
+        "/resources/dog_chichay.jpg", "Female"),
+
+new Dog("Chiwa", 1, 0, // 1 year old
+        "Color: Brown, Breed: Chihuahua\n" +
+        "Health Status: Lactose Intolerance to any milk replacer\n" +
+        "Spayed/Neutered: Spayed\n" +
+        "Vaccinations & Deworm: Anti-rabies, 8-in-1 & Oral Deworm\n" +
+        "Description: Chiwa was rescued from a hoarding situation where she was living with over 20 dogs. Malnourished and shy, she’s slowly gaining confidence and trust.",
+        "/resources/dog_chiwa.jpg", "Female")
         ));
 
+        
+        
         updatePetDisplay(); // Initial display of all pets
     }
 
